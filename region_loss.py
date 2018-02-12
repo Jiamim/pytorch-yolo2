@@ -125,6 +125,7 @@ class RegionLoss(nn.Module):
         nC = self.num_classes
         nH = output.data.size(2)
         nW = output.data.size(3)
+        self.anchor_step = int(self.anchor_step)
 
         output   = output.view(nB, nA, (5+nC), nH, nW)
         x    = F.sigmoid(output.index_select(2, Variable(torch.cuda.LongTensor([0]))).view(nB, nA, nH, nW))
