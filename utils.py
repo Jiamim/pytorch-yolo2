@@ -388,7 +388,7 @@ def scale_bboxes(bboxes, width, height):
       
 def file_lines(thefilepath):
     count = 0
-    thefile = open(thefilepath, 'rb')
+    thefile = open(thefilepath, 'r')
     while True:
         buffer = thefile.read(8192*1024)
         if not buffer:
